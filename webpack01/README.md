@@ -8,7 +8,7 @@ webpack默认配置文件： webpack.config.js
 
 #### webpack配置组成
 
-![1565246046392](./readme/1565246046392.png)
+![1565246046392](https://github.com/Marcuslyj/webpack4-practice/tree/master/webpack01/readme/1565246046392.png)
 
 
 
