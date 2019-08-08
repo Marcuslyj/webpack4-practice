@@ -1,1 +1,2 @@
-document.write('search')
+
+document.write((() => 'search')())

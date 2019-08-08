@@ -92,5 +92,15 @@ webpack开箱即用只支持js和json两种文件类型，通过loaders去支持
 
 
 
+## 解析es6
+
+```shell
+cnpm i @babel/core @babel/preset-env --save-dev
+```
+
+
+
+
+
 
 
