@@ -8,7 +8,7 @@ webpack默认配置文件： webpack.config.js
 
 #### webpack配置组成
 
-![1565246046392](https://github.com/Marcuslyj/webpack4-practice/tree/master/webpack01/readme/1565246046392.png)
+![image](https://github.com/Marcuslyj/webpack4-practice/tree/master/webpack01/readme/1565246046392.png)
 
 
 
@@ -32,7 +32,7 @@ npm init -y
 
 #### entry（依赖图的入口）
 
-![1565247914019](./readme/1565247914019.png)
+![image](./readme/1565247914019.png)
 
 
 
@@ -60,7 +60,7 @@ webpack开箱即用只支持js和json两种文件类型，通过loaders去支持
 
 #### 常用loaders
 
-![1565249237875](./readme/1565249237875.png)
+![image](./readme/1565249237875.png)
 
 
 
@@ -76,7 +76,7 @@ webpack开箱即用只支持js和json两种文件类型，通过loaders去支持
 
 #### 常用plugins
 
-![1565249766050](./readme/1565249766050.png)
+![image](./readme/1565249766050.png)
 
 
 
@@ -86,7 +86,7 @@ webpack开箱即用只支持js和json两种文件类型，通过loaders去支持
 
 ## mode
 
-![1565250368515](./readme/1565250368515.png)
+![image](./readme/1565250368515.png)
 
 
 
