@@ -143,7 +143,7 @@ less-loader 用于见less转成css
 
 ## 热更新
 
-#### 使用webpack-dev-server
+#### 方式一：使用webpack-dev-server
 
 WDS不刷新浏览器
 
@@ -151,3 +151,26 @@ WDS不输出文件，而是放在内存中
 
 使用HotModuleReplacementPlugin插件
 
+
+
+#### 方式二：使用webpack-dev-middleware
+
+WDM将webpack输出的文件传输给服务器
+
+![1565263513443](./readme/1565263513443.png)
+
+
+
+
+
+### 热更新原理
+
+![1565263817988](./readme/1565263817988.png)
+
+
+
+Bundle server就是服务器，使得文件可以在服务器上访问，如localhost:8080
+
+
+
+一般用到websocket
