@@ -8,7 +8,7 @@ webpack默认配置文件： webpack.config.js
 
 #### webpack配置组成
 
-![1565246046392](C:\Users\flnet\AppData\Roaming\Typora\typora-user-images\1565246046392.png)
+![1565246046392](\readme\1565246046392.png)
 
 
 
