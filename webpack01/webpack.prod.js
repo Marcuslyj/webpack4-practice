@@ -1,17 +1,16 @@
 const path = require('path')
-const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: {
         index: './src/index.js',
         search: './src/search.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: '[name]_[chunkhash:8].js'
     },
-    watch: true,
     module: {
         rules: [
             {
@@ -21,14 +20,14 @@ module.exports = {
             {
                 test: /.css$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader'
                 ]
             },
             {
                 test: /.less$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'less-loader'
                 ]
@@ -40,22 +39,26 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 10240
+                            limit: 10240,
+                            name: '[name]_[hash:8].[ext]'
                         }
                     }
                 ]
             },
             {
                 test: /.(woff|woff2|eot|ttf|otf|svg)$/,
-                use: 'file-loader'
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name]_[hash:8].[ext]'
+                    }
+                }
             }
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ],
-    devServer: {
-        contentBase: './dist',
-        hot: true
-    }
+        new MiniCssExtractPlugin({
+            filename: '[name]_[contenthash:8].css'
+        })
+    ]
 }

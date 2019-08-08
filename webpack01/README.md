@@ -174,3 +174,32 @@ Bundle server就是服务器，使得文件可以在服务器上访问，如loca
 
 
 一般用到websocket
+
+
+
+
+
+
+
+## 文件指纹策略
+
+- Hash：和整个项目的构建相关，只要项目文件有修改，整个项目构建的hash值就会更改
+- Chunkhash：和webpack打包的chunk有关，不同的entry会生成不同的chunkhash值
+- Contenthash：根据文件内容来定义hash，文件内容不变，则contenthash不变
+
+
+
+output文件一般chunkhash
+
+css一般contenthash
+
+图片字体的hash不太一样
+
+![1565264673285](./readme/1565264673285.png)
+
+
+
+
+
+
+
