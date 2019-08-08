@@ -203,3 +203,29 @@ css一般contenthash
 
 
 
+## 代码压缩
+
+- html压缩
+
+  html-webpack-plugin
+
+- css压缩
+
+  使用optimize-css-assets-webpack-plugin + cssnano
+
+- js压缩
+
+  production默认开启 uglifyjs-webpack-plugin进行压缩
+
+
+
+
+
+
+
+
+
+
+
+
+
