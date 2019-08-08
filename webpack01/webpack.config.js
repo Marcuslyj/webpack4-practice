@@ -30,8 +30,13 @@ module.exports = {
                     'css-loader',
                     'less-loader'
                 ]
-            }, {
+            },
+            {
                 test: /.(png|jpe?g|gif)$/,
+                use: 'file-loader'
+            },
+            {
+                test: /.(woff|woff2|eot|ttf|otf|svg)$/,
                 use: 'file-loader'
             }
         ]

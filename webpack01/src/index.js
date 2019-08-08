@@ -9,7 +9,8 @@ class Home extends React.Component {
         return (
             <div>
                 <div className="h">Home Page</div>
-                <img src={img1} />
+                <img className="img1" src={img1} />
+                <i class="web-font">英雄难过美人关，我不是英雄，美人让我过了关</i>
             </div>
         )
 
