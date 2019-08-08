@@ -13,8 +13,10 @@
   "devDependencies": {
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "style-loader": "^1.0.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
   }

@@ -102,5 +102,19 @@ cnpm i @babel/core @babel/preset-env --save-dev
 
 
 
+## 解析css
+
+css-loader用于加载.css文件，并转换成commonjs对象
+
+style-loader 将样式通过style标签插入到head中
+
+
+
+
+
+
+
+
+
 
 
