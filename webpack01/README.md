@@ -141,5 +141,13 @@ less-loader 用于见less转成css
 
 
 
+## 热更新
 
+#### 使用webpack-dev-server
+
+WDS不刷新浏览器
+
+WDS不输出文件，而是放在内存中
+
+使用HotModuleReplacementPlugin插件
 
