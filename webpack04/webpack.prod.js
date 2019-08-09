@@ -23,7 +23,7 @@ const setMPA = () => {
             htmlWebpackPlugins.push(new HtmlWebpackPlugin({
                 template: path.join(__dirname, `src/pages/${pageName}/index.html`),
                 filename: `${pageName}.html`,
-                chunks: [pageName],
+                chunks: ['commons', pageName],
                 inject: true,
                 minify: {
                     html5: true,
@@ -138,5 +138,17 @@ module.exports = {
         }),
         // 动态html
         ...htmlWebpackPlugins
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            minSize: 0,
+            cacheGroups: {
+                commons: {
+                    name: 'commons',
+                    chunks: 'all',
+                    minChunks: 2
+                }
+            }
+        }
+    }
 }
