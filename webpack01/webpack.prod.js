@@ -30,6 +30,15 @@ module.exports = {
                         options: {
                             plugins: [require('autoprefixer')]
                         }
+                    },
+                    {
+                        loader: 'px2rem-loader',
+                        options: {
+                            // 1rem对应75px
+                            remUnit: 75,
+                            // px转成rem后的小数点位数
+                            remPrecision: 8
+                        }
                     }
                 ]
             },
@@ -44,7 +53,16 @@ module.exports = {
                             plugins: [require('autoprefixer')]
                         }
                     },
-                    'less-loader'
+                    'less-loader',
+                    {
+                        loader: 'px2rem-loader',
+                        options: {
+                            // 1rem对应75px，设置设计稿的1/10
+                            remUnit: 75,
+                            // px转成rem后的小数点位数
+                            remPrecision: 8
+                        }
+                    }
                 ]
             },
             {

@@ -231,3 +231,17 @@ clean-webpack-plugin
 
 postcss-loader + autoprefixer插件，添加browserslist配置项
 
+
+
+
+
+## 移动端CSS px自动转换成rem
+
+px2rem-loader，将px转rem；
+
+页面渲染时，计算根元素的font-size值，可使用手淘的lib-flexible库；
+
+
+
+
+
