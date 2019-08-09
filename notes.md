@@ -323,6 +323,28 @@ css内联：
 
 
 
+## tree shaking
+
+引入的模块，tree shaking把用到方法打进bundle，没用到的在uglify阶段被擦除掉
+
+
+
+**使用**：webpack默认支持，在.babelrc设置modules:false即可
+
+**要求**：必须是es6语法，cjs方式不支持
+
+
+
+production mode默认开启
+
+
+
+#### DCE
+
+- 代码不会被执行，不可达
+- 代码执行的结果不会被用到
+- 代码只会影响死变量（只写不读）
+
 
 
 
