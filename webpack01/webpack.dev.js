@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -51,7 +52,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        // 清理构建目录
+        new CleanWebpackPlugin(),
     ],
     devServer: {
         contentBase: './dist',
