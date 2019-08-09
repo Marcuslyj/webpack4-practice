@@ -245,3 +245,37 @@ px2rem-loader，将px转rem；
 
 
 
+## 资源内联
+
+意义：
+
+- 代码层面
+  - 页面框架的初始化脚本
+  - 上报相关打点
+  - css内联避免页面闪动
+- 请求层面
+  - 减少http网络请求，小图片或字体内联（url-loader）
+
+
+
+![1565337315094](./readme/1565337315094.png)
+
+
+
+css内联：
+
+- 方式一：style-loader
+- 方式二：html-inline-css-webpack-plugin
+
+
+
+**raw-loader使用0.5版本**
+
+**html-webpack-plugin默认使用ejs模板引擎**
+
+
+
+
+
+
+
