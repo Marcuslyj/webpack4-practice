@@ -7,8 +7,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
     mode: 'production',
     entry: {
-        index: './src/index.js',
-        search: './src/search.js'
+        index: './src/pages/index/index.js',
+        search: './src/pages/search/search.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -102,7 +102,7 @@ module.exports = {
             cssProcessor: require('cssnano')
         }),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src/index.html'),
+            template: path.join(__dirname, 'src/pages/index/index.html'),
             filename: 'index.html',
             chunks: ['index'],
             inject: true,
@@ -116,7 +116,7 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src/search.html'),
+            template: path.join(__dirname, 'src/pages/search/search.html'),
             filename: 'search.html',
             // 入口
             chunks: ['search'],

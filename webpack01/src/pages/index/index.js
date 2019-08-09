@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import '../styles/reset/reset.css'
+import '../../../styles/reset/reset.css'
 import './index.less'
-import img1 from './assert/img/微信图片_20190627183624.jpg';
-import img2 from './assert/img/if_Halloween-06_355959.png'
+import img1 from '../../assert/img/微信图片_20190627183624.jpg';
+import img2 from '../../assert/img/if_Halloween-06_355959.png'
 
 
 
