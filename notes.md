@@ -295,9 +295,27 @@ css内联：
 
 
 
+## 提取页面公共资源
 
+1
 
+**思路**：将react、react-dom、基础包通过cdn引入，不打包进bundle中
 
+**方法**：html-webpack-externals-plugin
+
+2
+
+**利用SplitChunksPlugin进行公共脚本分离**，webpack4内置，替代CommonsChunkPlugin
+
+参数:
+
+- async，异步引入的库进行分离（默认）
+- initial，同步引入的库进行分离
+- all，所有引入的库进行分离
+
+3
+
+**利用SplitChunksPlugin分离基础包**
 
 
 
