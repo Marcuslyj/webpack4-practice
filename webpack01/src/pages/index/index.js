@@ -9,6 +9,7 @@ import img2 from '../../assert/img/if_Halloween-06_355959.png'
 
 class Home extends React.Component {
     render() {
+        debugger
         return (
             <div>
                 <span>财务得福后果额</span>
