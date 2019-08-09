@@ -221,6 +221,10 @@ css一般contenthash
 
 
 
+## 清理构建目录
+
+clean-webpack-plugin
+
 
 
 

@@ -2,6 +2,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     mode: 'production',
@@ -59,6 +60,8 @@ module.exports = {
         ]
     },
     plugins: [
+        // 清理构建目录
+        new CleanWebpackPlugin(),
         // 分离css
         new MiniCssExtractPlugin({
             filename: '[name]_[contenthash:8].css'
