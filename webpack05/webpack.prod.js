@@ -4,6 +4,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const glob = require('glob')
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
 
 // 动态获取多entry和htmlWebpackPlugins
 const setMPA = () => {
@@ -135,6 +136,24 @@ module.exports = {
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano')
+        }),
+        new HtmlWebpackExternalsPlugin({
+            externals: [
+                {
+                    module: 'react',
+                    entry: 'https://11.url.cn/now/lib/16.2.0/react.min.js',
+                    global: 'React',
+                },
+                {
+                    module: 'react-dom',
+                    entry: 'https://11.url.cn/now/lib/16.2.0/react-dom.min.js',
+                    global: 'ReactDOM',
+                },{
+                    module: 'echarts',
+                    entry:'https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js',
+                    global: 'echarts'
+                }
+            ],
         }),
         // 动态html
         ...htmlWebpackPlugins
