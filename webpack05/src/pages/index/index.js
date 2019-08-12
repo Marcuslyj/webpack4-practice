@@ -8,15 +8,23 @@ import img2 from '../../assert/img/if_Halloween-06_355959.png'
 
 
 class Home extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    dynamicImport() {
+        import('./d_import.js')
+            .then(fn => {
+                console.log(fn.default())
+            })
+    }
     render() {
-        debugger
         return (
             <div>
                 <span>财务得福后果额</span>
                 <div className="h">Home Page</div>
                 <img className="img1" src={img1} />
-                <i class="web-font">英雄难过美人关，我不是英雄，美人让我过了关</i>
-                <img className="img1" src={img2} />
+                <i className="web-font">英雄难过美人关，我不是英雄，美人让我过了关</i>
+                <img className="img1" src={img2} onClick={this.dynamicImport} />
             </div>
         )
 

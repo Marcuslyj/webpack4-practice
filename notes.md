@@ -376,3 +376,27 @@ webpack4，production mode 默认开启
 
 
 
+
+
+
+
+## 代码分割和动态import
+
+#### 场景
+
+- 抽取公用代码
+- 脚本懒加载，使得初始下载的代码更小
+
+
+
+
+
+#### 懒加载js脚本
+
+- CJS： require.ensure
+- es6： 动态import（需要babel转换）
+
+
+
+使用@babel/plugin-syntax-dynamic-import插件
+
