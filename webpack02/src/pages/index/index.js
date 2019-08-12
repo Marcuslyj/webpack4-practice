@@ -14,7 +14,7 @@ class Home extends React.Component {
                 <span>财务得福后果额</span>
                 <div className="h">Home Page</div>
                 <img className="img1" src={img1} />
-                <i class="web-font">英雄难过美人关，我不是英雄，美人让我过了关</i>
+                <i className="web-font">英雄难过美人关，我不是英雄，美人让我过了关</i>
                 <img className="img1" src={img2} />
             </div>
         )
