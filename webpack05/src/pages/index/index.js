@@ -11,7 +11,7 @@ class Home extends React.Component {
     constructor(props) {
         super(props)
     }
-    dynamicImport() {
+    dynamicImport = () => {
         import('./d_import.js')
             .then(fn => {
                 console.log(fn.default())
