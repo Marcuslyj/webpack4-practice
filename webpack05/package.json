@@ -46,6 +46,7 @@
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
+    "@babel/runtime": "^7.5.5",
     "lib-flexible": "^0.3.2"
   }
 }

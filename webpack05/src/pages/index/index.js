@@ -11,11 +11,9 @@ class Home extends React.Component {
     constructor(props) {
         super(props)
     }
-    dynamicImport = () => {
-        import('./d_import.js')
-            .then(fn => {
-                console.log(fn.default())
-            })
+    dynamicImport = async () => {
+        let { default: fn } = await import('./d_import.js')
+        console.log(fn())
     }
     render() {
         return (
