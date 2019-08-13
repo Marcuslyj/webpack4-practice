@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const glob = require('glob')
 const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 // 动态获取多entry和htmlWebpackPlugins
 const setMPA = () => {
@@ -144,21 +145,23 @@ module.exports = {
             externals: [
                 {
                     module: 'react',
-                    entry: 'https://11.url.cn/now/lib/16.2.0/react.min.js',
+                    entry: 'https://cdn.staticfile.org/react/16.3.2/umd/react.production.min.js',
                     global: 'React',
                 },
                 {
                     module: 'react-dom',
-                    entry: 'https://11.url.cn/now/lib/16.2.0/react-dom.min.js',
+                    entry: 'https://cdn.staticfile.org/react-dom/16.3.2/umd/react-dom.production.min.js',
                     global: 'ReactDOM',
-                },{
+                }, {
                     module: 'echarts',
-                    entry:'https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js',
+                    entry: 'https://cdn.staticfile.org/echarts/4.2.1-rc1/echarts.min.js',
                     global: 'echarts'
                 }
             ],
         }),
+        new FriendlyErrorsWebpackPlugin(),
         // 动态html
         ...htmlWebpackPlugins
-    ]
+    ],
+    stats: 'errors-only'
 }
