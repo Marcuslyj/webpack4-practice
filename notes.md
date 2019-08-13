@@ -400,3 +400,27 @@ webpack4，production mode 默认开启
 
 使用@babel/plugin-syntax-dynamic-import插件
 
+
+
+
+
+## 集成ESlint
+
+webpack+eslint
+
+
+
+使用eslint-loader ，构建是检查js规范
+
+
+
+
+
+
+
+
+
+
+
+
+

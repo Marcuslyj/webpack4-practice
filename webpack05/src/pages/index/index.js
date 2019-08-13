@@ -5,6 +5,7 @@ import './index.less'
 import img1 from '../../assert/img/微信图片_20190627183624.jpg';
 import img2 from '../../assert/img/if_Halloween-06_355959.png'
 // import echarts from 'echarts'
+import util from '../../common/util'
 
 
 class Home extends React.Component {
@@ -16,20 +17,8 @@ class Home extends React.Component {
         console.log(fn())
     }
     loadEcharts = async () => {
-        if (!window['echarts']) {
-            // 没加载就加载
-            await (new Promise((resolve, reject) => {
-                let script = document.createElement('script')
-                script.type = "text/javascript"
-                script.src = "https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"
-                script.onload = () => {
-                    resolve()
-                }
-                document.querySelector('body').appendChild(script)
-            }))
-        }
-        let { default: echarts } = await import('echarts')
-
+        let echarts = await util.loadjs("https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js", 'echarts')
+        
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
         // 指定图表的配置项和数据
