@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../../../styles/reset/reset.css';
 import './index.less';
+import largeNumber from 'lyj-large-number';
 import img1 from '../../assert/img/微信图片_20190627183624.jpg';
 import img2 from '../../assert/img/if_Halloween-06_355959.png';
 // import echarts from 'echarts'
@@ -15,7 +16,7 @@ class Home extends React.Component {
   }
 
   loadEcharts = async () => {
-    const echarts = await util.loadjs('https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js', 'echarts');
+    const echarts = await util.loadjs('https://cdn.staticfile.org/echarts/4.2.1-rc1/echarts.min.js', 'echarts');
 
     // 基于准备好的dom，初始化echarts实例
     const myChart = echarts.init(document.getElementById('main'));
@@ -53,6 +54,10 @@ class Home extends React.Component {
         <img className="img1" src={img2} onClick={this.dynamicImport} alt="" />
         <button type="button" onClick={this.loadEcharts}>load echarts</button>
         <div id="main" style={{ width: '600px', height: '400px' }} />
+        <div>
+自己发布的大整数加法npm包：
+          {largeNumber('9999999999', '1')}
+        </div>
       </div>
     );
   }
