@@ -6,12 +6,15 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 
+// 工作目录
+const projectRoot = process.cwd();
+
 // 多页面打包，动态获取多entry和htmlWebpackPlugins
 const setMPA = () => {
   const entry = {};
   const htmlWebpackPlugins = [];
 
-  const entryFiles = glob.sync(path.join(__dirname, './src/pages/*/index.js'));
+  const entryFiles = glob.sync(path.join(projectRoot, './src/pages/*/index.js'));
 
   Object
     .keys(entryFiles)
@@ -22,7 +25,7 @@ const setMPA = () => {
 
       entry[pageName] = entryFile;
       return htmlWebpackPlugins.push(new HtmlWebpackPlugin({
-        template: path.join(__dirname, `src/pages/${pageName}/index.html`),
+        template: path.join(projectRoot, `src/pages/${pageName}/index.html`),
         filename: `${pageName}.html`,
         chunks: [pageName],
         inject: true,
