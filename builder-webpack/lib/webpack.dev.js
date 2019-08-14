@@ -1,19 +1,19 @@
-const merge = require('webpack-merge')
-const baseConfig = require('./webpack.base.js')
-const webpack = require('webpack')
+const merge = require('webpack-merge');
+const webpack = require('webpack');
+const baseConfig = require('./webpack.base.js');
 
 // 热更新和source-map
 const devConfig = {
-    mode: 'development',
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-    ],
-    devServer: {
-        contentBase: './dist',
-        hot: true,
-        stats: 'errors-only'
-    },
-    devtool: 'source-map'
-}
+  mode: 'development',
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+    stats: 'errors-only',
+  },
+  devtool: 'source-map',
+};
 
-module.exports = merge(baseConfig, devConfig)
+module.exports = merge(baseConfig, devConfig);

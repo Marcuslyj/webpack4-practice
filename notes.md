@@ -478,9 +478,18 @@ ssr核心：减少请求
 
 ![1565695843948](./readme/1565695843948.png)
 
+![1565696090519](./readme/1565696090519.png)
 
 
 
+
+
+
+
+## 使用eslint规范构建脚本
+
+- 使用eslint-config-airbnb-base
+- eslint --fix 自动处理空格
 
 
 
