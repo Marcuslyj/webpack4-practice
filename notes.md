@@ -606,5 +606,16 @@ webpack-bundle-analyzer
 
 
 
+## 使用高版本webpack和node
+
+性能提升
 
 
+
+## 多进程多实例构建
+
+资源并行解析可选方案
+
+- thread-loader（webpack官方）
+- parallel-webpack
+- HappyPack
