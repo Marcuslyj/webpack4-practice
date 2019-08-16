@@ -568,11 +568,23 @@ ssr核心：减少请求
 
 
 
+![1565922533929](readme/1565922533929.png)
 
 
 
 
 
+
+
+
+
+## 使用webpack内置的stats
+
+
+
+## 速度分析
+
+使用speed-measure-webpack-plugin，可以看到每个loader和plugin执行耗时
 
 
 

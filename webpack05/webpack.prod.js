@@ -6,6 +6,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const glob = require('glob')
 const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
+
+const smp = new SpeedMeasureWebpackPlugin()
 
 // 动态获取多entry和htmlWebpackPlugins
 const setMPA = () => {
@@ -44,7 +47,7 @@ const setMPA = () => {
 const { entry, htmlWebpackPlugins } = setMPA()
 
 
-module.exports = {
+module.exports = smp.wrap({
     mode: 'production',
     entry,
     output: {
@@ -172,7 +175,7 @@ module.exports = {
         // 动态html
         ...htmlWebpackPlugins
     ],
-    // stats: 'errors-only'
-    stats: 'normal'
+    stats: 'errors-only'
+    // stats: 'normal'
 
-}
+})
