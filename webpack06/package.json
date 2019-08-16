@@ -9,7 +9,8 @@
     "watch": "webpack --config webpack.dev.js --watch",
     "dev": "webpack-dev-server --config webpack.dev.js --open",
     "eslint": "eslint --fix src",
-    "build:ssr": "webpack --config webpack.ssr.js"
+    "build:ssr": "webpack --config webpack.ssr.js",
+    "build:stats": "webpack --config webpack.prod.js --json > stats.json"
   },
   "keywords": [],
   "author": "",
