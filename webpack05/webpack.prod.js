@@ -172,5 +172,7 @@ module.exports = {
         // 动态html
         ...htmlWebpackPlugins
     ],
-    stats: 'errors-only'
+    // stats: 'errors-only'
+    stats: 'normal'
+
 }
