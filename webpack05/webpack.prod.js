@@ -9,6 +9,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const TerserPlugin = require('terser-webpack-plugin')
+const webpack = require('webpack')
 
 const smp = new SpeedMeasureWebpackPlugin()
 
@@ -154,16 +155,17 @@ module.exports = {
         }),
         new HtmlWebpackExternalsPlugin({
             externals: [
+                // {
+                //     module: 'react',
+                //     entry: 'https://cdn.staticfile.org/react/16.3.2/umd/react.production.min.js',
+                //     global: 'React',
+                // },
+                // {
+                //     module: 'react-dom',
+                //     entry: 'https://cdn.staticfile.org/react-dom/16.3.2/umd/react-dom.production.min.js',
+                //     global: 'ReactDOM',
+                // }, 
                 {
-                    module: 'react',
-                    entry: 'https://cdn.staticfile.org/react/16.3.2/umd/react.production.min.js',
-                    global: 'React',
-                },
-                {
-                    module: 'react-dom',
-                    entry: 'https://cdn.staticfile.org/react-dom/16.3.2/umd/react-dom.production.min.js',
-                    global: 'ReactDOM',
-                }, {
                     module: 'echarts',
                     entry: 'https://cdn.staticfile.org/echarts/4.2.1-rc1/echarts.min.js',
                     global: 'echarts'
@@ -182,6 +184,10 @@ module.exports = {
         },
         // 体积分析
         // new BundleAnalyzerPlugin(),
+        // 引用分离基础包
+        new webpack.DllReferencePlugin({
+            manifest: require('./build/library/library.json')
+        }),
         // 动态html
         ...htmlWebpackPlugins
     ],

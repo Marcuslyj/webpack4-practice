@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const glob = require('glob')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
+// const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 // 动态获取多entry和htmlWebpackPlugins
@@ -129,24 +129,24 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         // 清理构建目录
         new CleanWebpackPlugin(),
-        new HtmlWebpackExternalsPlugin({
-            externals: [
-                {
-                    module: 'react',
-                    entry: 'https://cdn.staticfile.org/react/16.3.2/umd/react.production.min.js',
-                    global: 'React',
-                },
-                {
-                    module: 'react-dom',
-                    entry: 'https://cdn.staticfile.org/react-dom/16.3.2/umd/react-dom.production.min.js',
-                    global: 'ReactDOM',
-                }, {
-                    module: 'echarts',
-                    entry: 'https://cdn.staticfile.org/echarts/4.2.1-rc1/echarts.min.js',
-                    global: 'echarts'
-                }
-            ],
-        }),
+        // new HtmlWebpackExternalsPlugin({
+        //     externals: [
+        //         {
+        //             module: 'react',
+        //             entry: 'https://cdn.staticfile.org/react/16.3.2/umd/react.production.min.js',
+        //             global: 'React',
+        //         },
+        //         {
+        //             module: 'react-dom',
+        //             entry: 'https://cdn.staticfile.org/react-dom/16.3.2/umd/react-dom.production.min.js',
+        //             global: 'ReactDOM',
+        //         }, {
+        //             module: 'echarts',
+        //             entry: 'https://cdn.staticfile.org/echarts/4.2.1-rc1/echarts.min.js',
+        //             global: 'echarts'
+        //         }
+        //     ],
+        // }),
         new FriendlyErrorsWebpackPlugin(),
         // 动态html
         ...htmlWebpackPlugins

@@ -638,9 +638,11 @@ webpack-bundle-analyzer
 
 
 
+## 进一步分包：预编译资源模块（也是可以提升打包速度）
 
+思路：将react、react-dom、redux、react-redux基础包和业务基础包打包成一个文件
 
-
+方法：使用DLLPlugin进行分包，DllReferencePlugin对manifest.json引用
 
 
 
