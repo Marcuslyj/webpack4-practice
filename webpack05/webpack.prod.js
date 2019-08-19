@@ -8,6 +8,7 @@ const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const TerserPlugin = require('terser-webpack-plugin')
 
 const smp = new SpeedMeasureWebpackPlugin()
 
@@ -48,7 +49,7 @@ const setMPA = () => {
 const { entry, htmlWebpackPlugins } = setMPA()
 
 
-module.exports = smp.wrap({
+module.exports = {
     mode: 'production',
     entry,
     output: {
@@ -180,11 +181,21 @@ module.exports = smp.wrap({
             })
         },
         // 体积分析
-        new BundleAnalyzerPlugin(),
+        // new BundleAnalyzerPlugin(),
         // 动态html
         ...htmlWebpackPlugins
     ],
-    stats: 'errors-only'
+    // stats: 'errors-only',
     // stats: 'normal'
+    optimization: {
+        minimizer: [
+            new TerserPlugin({
+                // 并行压缩
+                parallel: true
+            })
+        ]
+    }
+}
 
-})
+// 查看耗时
+    // smp.wrap()

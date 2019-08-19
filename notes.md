@@ -619,3 +619,44 @@ webpack-bundle-analyzer
 - thread-loader（webpack官方）
 - parallel-webpack
 - HappyPack
+
+
+
+
+
+## 多进程多实例并行压缩
+
+方式一：parallel-uglify-plugin
+
+方式二：uglifyjs-webpack-plugin开启parallel参数
+
+方式三：terser-webpack-plugin（webpack4，支持压缩es6）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
