@@ -701,6 +701,20 @@ webpack-bundle-analyzer
 
 
 
+## 使用TreeShaking擦除无用的css
+
+![1566302349138](readme/1566302349138.png)
+
+
+
+![1566302435910](readme/1566302435910.png)
+
+
+
+
+
+
+
 
 
 

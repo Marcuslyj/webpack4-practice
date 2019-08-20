@@ -11,6 +11,11 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const TerserPlugin = require('terser-webpack-plugin')
 const webpack = require('webpack')
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
+const PurgecssPlugin = require('purgecss-webpack-plugin')
+
+const PATHS = {
+    src: path.join(__dirname, 'src')
+}
 
 const smp = new SpeedMeasureWebpackPlugin()
 
@@ -222,6 +227,9 @@ module.exports = {
         // new BundleAnalyzerPlugin(),
         // 缓存
         new HardSourceWebpackPlugin(),
+        new PurgecssPlugin({
+            paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+        }),
         // 动态html
         ...htmlWebpackPlugins
     ],
