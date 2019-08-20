@@ -10,6 +10,7 @@ const SpeedMeasureWebpackPlugin = require('speed-measure-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const TerserPlugin = require('terser-webpack-plugin')
 const webpack = require('webpack')
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 
 const smp = new SpeedMeasureWebpackPlugin()
 
@@ -184,6 +185,8 @@ module.exports = {
         },
         // 体积分析
         // new BundleAnalyzerPlugin(),
+        // 缓存
+        new HardSourceWebpackPlugin(),
         // 动态html
         ...htmlWebpackPlugins
     ],
