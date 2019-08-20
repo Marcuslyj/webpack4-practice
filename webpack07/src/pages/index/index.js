@@ -7,6 +7,7 @@ import img1 from '../../assert/img/微信图片_20190627183624.jpg';
 import img2 from '../../assert/img/if_Halloween-06_355959.png';
 // import echarts from 'echarts'
 import util from '../../common/util';
+import bg from '../../assert/img/bg.jpg';
 
 
 class Home extends React.Component {
@@ -55,9 +56,10 @@ class Home extends React.Component {
         <button type="button" onClick={this.loadEcharts}>load echarts</button>
         <div id="main" style={{ width: '600px', height: '400px' }} />
         <div>
-自己发布的大整数加法npm包：
+          自己发布的大整数加法npm包：
           {largeNumber('9999999999', '1')}
         </div>
+        <img style={{ width: '100px' }} src={bg} alt="" />
       </div>
     );
   }

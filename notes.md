@@ -687,9 +687,17 @@ webpack-bundle-analyzer
 
 
 
+## 图片压缩
+
+要求：基于node库的imagemin或者tinpng api
 
 
 
+使用：配置image-webpack-loader
+
+![1566300705027](./readme/1566300705027.png)
+
+![1566300794434](readme/1566300794434.png)
 
 
 
