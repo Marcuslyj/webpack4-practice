@@ -58,10 +58,20 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name]_[chunkhash:8].js'
     },
+    resolve: {
+        alias: {
+            'react': path.resolve(__dirname, './node_modules/react/umd/react.production.min.js'),
+            'react-dom': path.resolve(__dirname, './node_modules/react-dom/umd/react-dom.production.min.js'),
+        },
+        // modules: [path.resolve(__dirname, 'node_modules')],
+        extensions: ['.js'],
+        mainFields: ['main']
+    },
     module: {
         rules: [
             {
                 test: /.js$/,
+                include: path.resolve('src'),
                 use: [
                     {
                         loader: 'thread-loader',
@@ -69,6 +79,7 @@ module.exports = {
                             workers: 3
                         }
                     },
+                    // 'babel-loader',
                     'babel-loader?cacheDirectory=true',
                     'eslint-loader'
                 ]
