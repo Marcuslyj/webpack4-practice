@@ -224,7 +224,7 @@ module.exports = {
             })
         },
         // 体积分析
-        // new BundleAnalyzerPlugin(),
+        new BundleAnalyzerPlugin(),
         // 缓存
         new HardSourceWebpackPlugin(),
         new PurgecssPlugin({
