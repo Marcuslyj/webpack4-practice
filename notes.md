@@ -650,6 +650,18 @@ webpack-bundle-analyzer
 
 
 
+## 充分利用缓存提升二次构建速度
+
+思路：
+
+- babel-loader开启缓存
+- terser-webpack-plugin开启缓存
+- 使用cache-loader或hard-source-webpack-plugin
+
+
+
+
+
 
 
 
