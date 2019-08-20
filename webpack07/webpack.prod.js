@@ -164,7 +164,7 @@ module.exports = {
                     module: 'react-dom',
                     entry: 'https://cdn.staticfile.org/react-dom/16.3.2/umd/react-dom.production.min.js',
                     global: 'ReactDOM',
-                }, 
+                },
                 {
                     module: 'echarts',
                     entry: 'https://cdn.staticfile.org/echarts/4.2.1-rc1/echarts.min.js',
@@ -193,7 +193,8 @@ module.exports = {
         minimizer: [
             new TerserPlugin({
                 // 并行压缩
-                parallel: true
+                parallel: true,
+                cache: true
             })
         ]
     }
