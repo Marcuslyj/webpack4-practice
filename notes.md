@@ -737,3 +737,63 @@ webpack-bundle-analyzer
 
 ![1566303811907](readme/1566303811907.png)
 
+
+
+
+
+## 执行webpack命令
+
+webpack启动后，流程会走到cli里面。webpack会判断 webpack-cli和webpack-command是否安装，两者都可用，只是webpack-cli的功能丰富些。如果两个都没安装，检查包管理器是npm 还是 yarn，提示安装，有以下选项。如果安装了一个就直接用。如果两个都安装了，就提示remove one of them。
+
+
+
+## webpack-cli做了什么
+
+- 引入yargs，对命令行进行定制
+- 分析命令行参数，对各个参数进行转换个，组成编译配置项
+- 引用webpack，根据配置项进行编译和构建
+
+执行结果
+
+webpack-cli对配置文件和命令行参数进行转换最终生成配置选项参数
+
+最终会根据配置参数实例化webpack对象，然后执行构建流程
+
+
+
+
+
+
+
+
+
+## webpack流程
+
+![1567404978414](readme/1567404978414.png)
+
+
+
+
+
+## 实现一个简易的webpack
+
+目标
+
+![1567407895672](readme/1567407895672.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
