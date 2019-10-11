@@ -763,6 +763,19 @@ webpack-cli对配置文件和命令行参数进行转换最终生成配置选项
 
 
 
+## Tapable
+
+- 核心对象Compiler继承Tapable
+- 核心对象Compilation继承Tapable
+
+
+
+Tapable是一个类似于Node.js的EventEmit的库，主要是控制钩子函数的发布订阅，控制着webpack的插件系统。Tapable库暴露了很多Hook类，为插件提供挂载的钩子。
+
+
+
+
+
 
 
 
